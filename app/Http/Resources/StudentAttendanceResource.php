@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Http\Resources;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
+
+
+
+class StudentAttendanceResource extends JsonResource
+{
+    /**
+     * Transform the resource into an array.
+     *
+     * @return array<string, mixed>
+     */
+    public function toArray(Request $request): array
+    {
+        return [
+            'id' => $this->id,
+            'roll' => $this->enroll->roll ?? null,
+            'student_name' => $this->enroll->student->english_name ?? null,
+            'student_id' => $this->enroll->student_id,
+            'classdate_id' => $this->classdate_id,
+            'status' => $this->status,
+            'remark' => $this->remark,  
+            'created_at' => $this->created_at->format('Y-m-d H:i:s'),
+            'updated_at' => $this->updated_at->format('Y-m-d H:i:s'),
+        ];
+    }
+}

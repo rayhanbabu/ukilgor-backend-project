@@ -1,0 +1,33 @@
+<?php
+namespace App\Services\WebsiteContent\PageCategoryService;
+
+use App\Models\Pagecategory;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+
+class PageCategoryDelete
+{
+    public function handle(Request $request, $Page_category_id)
+    {
+        DB::beginTransaction();
+        try {
+            $PageCategory = Pagecategory::findOrFail($Page_category_id);
+            $PageCategory->delete();
+
+         
+            DB::commit();
+            return response()->json([
+                'message' => 'Page Category deleted successfully',
+            ], 200);
+        } catch (\Exception $e) {
+            DB::rollback();
+            return response()->json([
+                'message' => 'Failed to delete Page Category',
+                'error' => $e->getMessage(),
+            ], 500);
+        }
+    }
+
+}
