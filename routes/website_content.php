@@ -10,7 +10,7 @@ use App\Http\Controllers\WebsiteContent\WebApiController;
     
           Route::get('/web/page-category', [WebApiController::class,'page_category']);
           Route::get('/web/page', [WebApiController::class,'page']);
-          Route::get('/web/employee', [WebApiController::class,'employee']);
+         
         
     });
 

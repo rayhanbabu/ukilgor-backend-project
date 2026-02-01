@@ -25,18 +25,8 @@ use App\Http\Controllers\StudentPanel\StudentInvoiceController;
     Route::get('/generate-pdf', [PdfController::class, 'generatePDF']);
     Route::get('{school_username}/marksheet-pdf', [PdfController::class, 'generateMarksheetPDF']);
     Route::get('{school_username}/tabulation-pdf', [PdfController::class, 'generateTabulationPDF']);
-    Route::get('{school_username}/summary-pdf', [PdfController::class, 'generateSummaryPDF']);
-    Route::get('{school_username}/input-form-pdf', [PdfController::class, 'generateInputFormPDF']);
-    Route::get('{school_username}/seat-plan-pdf', [PdfController::class, 'generateSeatPlanPDF']);
-    Route::get('{school_username}/admit-card-pdf', [PdfController::class, 'generateAdmitCardPDF']);
-    Route::get('{school_username}/subject-mark-pdf', [PdfController::class, 'generateSubjectMarkPDF']);
-    Route::get('{school_username}/attendance-pdf', [PdfController::class, 'generateAttendancePDF']);
-    Route::get('{school_username}/payrole-pdf', [PdfController::class, 'generatePayrolePDF']);
-    Route::get('{school_username}/merit-list-pdf', [PdfController::class, 'generateMeritListPDF']);
-    Route::get('{school_username}/admit-card-without-subject-pdf', [PdfController::class, 'generateAdmitCardPDFWithoutSubject']);
-    Route::get('{school_username}/testimonial', [PdfController::class, 'generateTestimonialPDF']);
-
-
+ 
+    
 
        // Payment Pdf Routes
        Route::get('{school_username}/pdf-payment-report-by-group', [PaymentPdfController::class, 'generatePaymentReportByGroupPDF']);
