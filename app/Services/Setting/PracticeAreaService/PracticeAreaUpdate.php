@@ -1,7 +1,7 @@
 <?php
 namespace App\Services\Setting\PracticeAreaService;
 
-use App\Models\PracticeArea;
+use App\Models\Practicearea;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Exception;
@@ -15,7 +15,7 @@ class PracticeAreaUpdate
         try {
 
             $user_auth =user();
-            $model = PracticeArea::findOrFail($id);
+            $model = Practicearea::findOrFail($id);
 
             $validator = validator($request->all(), [
                 'practicearea_name' => 'required|unique:practiceareas,practicearea_name,' . $id,

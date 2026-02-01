@@ -2,7 +2,7 @@
 
 namespace App\Services\Setting\PracticeAreaService;
 
-use App\Models\PracticeArea;
+use App\Models\Practicearea;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -30,7 +30,7 @@ class PracticeAreaAdd
     
             $user_auth =user();
         
-            $model = new PracticeArea();
+            $model = new Practicearea();
             $model->practicearea_name = $request->practicearea_name;
             $model->status = $request->status;
             $model->created_by = $user_auth->id; 

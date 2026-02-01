@@ -2,7 +2,7 @@
 
 namespace App\Services\Setting\PracticeAreaService;
 
-use App\Models\PracticeArea;
+use App\Models\Practicearea;
 use Illuminate\Http\Request;
 
 class PracticeAreaList
@@ -10,7 +10,7 @@ class PracticeAreaList
    
 public function handle(Request $request)
     {
-        $query = PracticeArea::query();
+        $query = Practicearea::query();
         
         // Search
         if ($request->has('search')) {

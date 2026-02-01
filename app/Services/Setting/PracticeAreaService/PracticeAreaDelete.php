@@ -1,7 +1,7 @@
 <?php
 namespace App\Services\Setting\PracticeAreaService;
 
-use App\Models\PracticeArea;
+use App\Models\Practicearea;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -12,7 +12,7 @@ class PracticeAreaDelete
     {
         DB::beginTransaction();
         try {
-            $model = PracticeArea::findOrFail($id); 
+            $model = Practicearea::findOrFail($id); 
             // Delete agent and user
             $model->delete();
 
