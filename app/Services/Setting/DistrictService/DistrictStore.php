@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Exception;
 
-class DistrictAdd
+class DistrictStore
 {
     public function handle(Request $request)
     {

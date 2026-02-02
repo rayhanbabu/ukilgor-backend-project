@@ -7,24 +7,25 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 
-use App\Services\Setting\DistrictService\Districtv1Add;
+
 use App\Services\Setting\DistrictService\DistrictList;
 use App\Services\Setting\DistrictService\DistrictUpdate;
 use App\Services\Setting\DistrictService\DistrictDelete;
+use App\Services\Setting\DistrictService\DistrictStore;
 
 
 class DistrictController extends Controller
 {
 
-    protected $Districtv1Add;
+    protected $DistrictStore;
     protected $DistrictList;
     protected $DistrictUpdate;
     protected $DistrictDelete;
 
 
-    public function __construct(Districtv1Add $Districtv1Add, DistrictList $DistrictList, DistrictUpdate $DistrictUpdate, DistrictDelete $DistrictDelete)
+    public function __construct(DistrictStore $DistrictStore, DistrictList $DistrictList, DistrictUpdate $DistrictUpdate, DistrictDelete $DistrictDelete)
     {
-         $this->Districtv1Add = $Districtv1Add;
+         $this->DistrictStore = $DistrictStore;
          $this->DistrictList = $DistrictList;
          $this->DistrictUpdate = $DistrictUpdate;
          $this->DistrictDelete = $DistrictDelete;
@@ -33,7 +34,7 @@ class DistrictController extends Controller
   
      public function district_add(Request $request)
      {
-          return $this->Districtv1Add->handle($request);
+          return $this->DistrictStore->handle($request);
      }
 
      public function district(Request $request){
